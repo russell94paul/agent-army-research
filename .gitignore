@@ -3,6 +3,9 @@ Thumbs.db
 .obsidian/workspace.json
 .obsidian/workspace-mobile.json
 .obsidian/cache
+.obsidian/appearance.json
+.obsidian/themes/
+.obsidian/plugins/
 .trash/
 *.tmp
 *.swp

@@ -1,5 +1,10 @@
 # Agent Army Research v5 — File Index
 
+> Regenerate the file list this index describes with:
+> `find . -type f -not -path './.git/*' | sed 's|^\./||' | sort`
+> Entries below the v5 baseline were added by the 2026-08-30 migration; see
+> `migration/MIGRATION-REPORT.md`.
+
 ## .gitignore
 
 - `.gitignore`
@@ -146,6 +151,24 @@
 
 - `inbox/.gitkeep`
 
+## legacy
+
+_Historical v2/v3 packs recovered from agent-factory. Not canonical — see `legacy/README.md`._
+
+- `legacy/README.md`
+- `legacy/archives/SHA256SUMS.txt`
+- `legacy/archives/agent-army-research-pack-v2.zip`
+- `legacy/archives/agent-army-research-pack-v3.zip`
+- `legacy/research-pack-v2/INDEX.md`
+- `legacy/research-pack-v2/README.md`
+- `legacy/research-pack-v2/research/prompts/R28-governance-security-safety.md`
+- `legacy/research-pack-v2/research/prompts/R29-implementation-roadmap-repo-integration.md`
+- `legacy/research-pack-v2/research/prompts/R30-evaluation-benchmarks-experiments.md`
+- `legacy/research-pack-v2/research/prompts/R31-frontier-organizational-primitives.md`
+- `legacy/research-pack-v3/README.md`
+- `legacy/research-pack-v3/foundations/R00-foundations-of-artificial-organization-engineering.md`
+- `legacy/research-pack-v3/meta/RESEARCH_EXECUTION_ORDER.md`
+
 ## maps
 
 - `maps/ARCHITECTURE.md`
@@ -161,6 +184,9 @@
 
 - `migration/.gitkeep`
 - `migration/MIGRATION-AUDIT-TEMPLATE.md`
+- `migration/MIGRATION-REPORT.md`
+- `migration/agent-factory-inventory-before.md`
+- `migration/content-collisions.md`
 
 ## obsidian
 
@@ -191,6 +217,7 @@
 - `research/context/00-source-leads-and-research-areas.md`
 - `research/context/01-army-organizational-mechanisms.md`
 - `research/context/02-agent-army-concept-catalog.md`
+- `research/context/03-origin-brain-dump-agent-army-excerpt.md`
 - `research/prompts/R20-product-thesis-artificial-organization-platform.md`
 - `research/prompts/R21-collective-cognition-knowledge-learning.md`
 - `research/prompts/R22-organizational-os-stigmergy-morphogenesis.md`
