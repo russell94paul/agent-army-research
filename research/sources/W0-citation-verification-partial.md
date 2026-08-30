@@ -91,13 +91,114 @@ work, the −70.0% pole named in the paper's own abstract.
 
 ---
 
+---
+
+## Resolved: R00 and R01 disagreed about whether the −3.5% exists at all
+
+The two Wave 0 lanes ran in parallel and could not see each other. They returned **contradictory**
+verdicts on the same figure, which is exactly what independent lanes are for.
+
+| Lane | Verdict |
+|---|---|
+| **R01** | Found it verbatim in the full text, with the interval |
+| **R00** | *"in no abstract of any version and I could not extract it from the body: `NOT-VERIFIED`"* |
+
+**Resolution: R01 is correct.** Fetched `https://arxiv.org/html/2512.08296v1` directly:
+
+> "Aggregating across all benchmarks and architectures, the overall mean MAS improvement is
+> **−3.5% (95% CI: [−18.6%, +25.7%])**, reflecting substantial performance heterogeneity with
+> **high variance (σ=45.2%)**."
+
+Both lanes were *partly* right and the distinction matters: the figure is **in the body of v1, not
+in any abstract**. R00 searched abstracts and reported honestly that it could not extract it from
+the body — a correct `NOT-VERIFIED` given what it actually did, not a fabrication. R01 went to the
+body and found it.
+
+**σ=45.2% is new** — neither our blueprint header nor `R2-answer-topology.md` carries it, and it is
+the most informative number in the sentence. A standard deviation of 45.2 points around a mean of
+−3.5 is the whole finding: the effect is enormous in both directions and the average is nearly
+meaningless.
+
+v1 parameters confirmed: **180 configurations · 4 benchmarks** (Finance Agent, BrowseComp-Plus,
+PlanCraft, Workbench) · 5 architectures · **R²=0.513**. v3: 260 configurations · 6 benchmarks ·
+**R²=0.373**. R00's claim that the model's explanatory power *fell* between versions is
+**SUPPORTED**.
+
+---
+
+## Resolved: the category name is taken, twice — both CONFIRMED
+
+R00 recommended not launching "Artificial Organization Engineering" publicly. Both supporting
+citations were checked directly and **both are real and on point**.
+
+**`arXiv:2602.13275` — "Artificial Organisations", William Waites, 5 Feb 2026. CONFIRMED.**
+Publishes under the name, with a thesis close to ours:
+
+> "Human institutions achieve reliable collective behaviour differently: they mitigate the risk
+> posed by misaligned individuals through organisational structure. Multi-agent AI systems should
+> follow this institutional model using **compartmentalisation and adversarial review** to achieve
+> reliable outcomes through **architectural design rather than assuming individual alignment**."
+
+**`arXiv:2607.25446` — "Toward an Organizational Science of Multi-Agent LLM Systems: Decoupling
+Who, How, and Which Algorithm", Chen, Song, Jin, Ren, Zhang, 28 Jul 2026. CONFIRMED.**
+IMACS makes Belbin roles, Mintzberg coordination and RACI accountability into *executable,
+independently swappable configuration* — the organizational-compiler thesis, published five weeks
+ago. Its ablation finding is a direct hit on **"intent before topology"**:
+
+> "Accountability placement changes outcomes exactly when the protocol routes the deliverable
+> through the accountable agent, and **the winning placement flips across model families, so
+> organizational design cannot be hard-coded; it must be revalidated, or learned, for each model
+> binding.**"
+
+If organizational design must be re-validated per model binding, then a compiler from intent to a
+fixed topology is compiling against a target that moves whenever the model does. That is a
+mechanism-level objection, not a naming objection, and it should be carried into R02 and R23.
+
+---
+
+## New finding: the estate's external research corpus has no resolvable citations
+
+R00 reported the `−3.5%` source was cited as `citeturn3view0` — an opaque ChatGPT citation
+token. Verified and **larger than reported**:
+
+```bash
+# in agent-factory
+grep -roh "turn[0-9]*\(view\|search\)[0-9]*" --include="*.md" . | grep -v worktrees | sort -u | wc -l
+```
+
+| File | Token occurrences |
+|---|---|
+| `docs/research/R16-evidence-pack.md` | 526 |
+| `docs/research/R8-evidence-pack.md` | 336 |
+| `docs/research/answers/R3-answer-control-plane.md` | 133 |
+| `docs/research/answers/R2-answer-topology.md` | 111 |
+| `docs/research/answers/R4-answer-agnostic-optimizer-run2.md` | 103 |
+| `docs/research/answers/R1-answer-eval-harness.md` | 92 |
+| `docs/research/answers/R4-answer-agnostic-optimizer.md` | 87 |
+| **total** | **1,388 occurrences · 215 distinct tokens · 7 files** |
+
+`R2-answer-topology.md` contains **no arXiv id, no DOI and no URL** — its only citations are these
+tokens. They resolve inside the ChatGPT session that produced them and nowhere else.
+
+**This is the mechanism behind the whole −3.5% episode.** The figure did not lose its provenance
+through carelessness downstream; there was never a resolvable citation to walk back to. Anyone who
+wanted to check it had to re-run the literature search, which is what R00 and R01 each independently
+did today — four and a half months late, and only because they were told to.
+
+**Recommendation (agent-factory, not this repo):** a lint that fails on `turn\d+(view|search)\d+`
+in `docs/research/`, plus a back-fill pass resolving the tokens that support load-bearing claims.
+Filed here rather than fixed — it is a product-repo change and belongs to whoever owns that corpus.
+
+---
+
 ## Still outstanding
 
-- Full citation audit of **R01**'s remaining sources — in particular KB-ORG (Sims, Corkill & Lesser,
-  JAAMAS 2008), ODML, Organization Self-Design (Ishida/Gasser/Yokoo, IEEE TKDE 1992), Co-Fields/TOTA
-  (ACM TOSEM 2009), and PROSA's "staff holons" (1998). These carry R01's seven CRITICAL novelty-risk
-  verdicts and **none of them has been independently opened yet.**
-- Full citation audit of **R00** once it completes.
-- The search R01 says it did **not** run: `UNMEASURABLE` as a first-class verdict in the
-  **metrology and software-testing** literatures. R01's narrowest-defensible-novelty claim rests on
-  that gap, so the claim is unconfirmed until someone looks there.
+- **R01's seven CRITICAL novelty verdicts rest on citations nobody has opened.** KB-ORG (Sims,
+  Corkill & Lesser, JAAMAS 2008), ODML, Organization Self-Design (Ishida/Gasser/Yokoo, IEEE TKDE
+  1992), Co-Fields/TOTA (ACM TOSEM 2009), PROSA's "staff holons" (1998). Until these are opened,
+  treat the CRITICAL verdicts as `PLAUSIBLE`, not `CONFIRMED`.
+- **R00's Moise+/JaCaMo/electronic-institutions lineage** is unaudited on the same basis.
+- R00 marked **four primary PDFs `NOT-ACCESSIBLE`** (scanned images). Correctly declared, still a gap.
+- The search **R01 says it did not run**: `UNMEASURABLE` as a first-class verdict in the
+  **metrology and software-testing** literatures. R01's narrowest-defensible-novelty claim rests
+  entirely on that gap, so **the one surviving novelty claim is the least verified thing in Wave 0.**
