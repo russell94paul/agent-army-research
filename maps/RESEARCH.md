@@ -1,0 +1,40 @@
+# Research Program
+
+## Protocol
+- [[../research/RESEARCH_PROTOCOL]]
+- [[../research/HYPOTHESIS_LEDGER]]
+- [[../research/ANSWER_TEMPLATE]]
+- [[../research/SYNTHESIS_TEMPLATE]]
+
+## Foundational wave
+- [[../foundations/R00-foundations-of-artificial-organization-engineering]]
+- [[../foundations/R01-prior-art-and-novelty-boundary]]
+- [[../foundations/R02-canonical-ontology-and-vocabulary]]
+
+## Research prompts
+- [[../research/prompts/R20-product-thesis-artificial-organization-platform]]
+- [[../research/prompts/R21-collective-cognition-knowledge-learning]]
+- [[../research/prompts/R22-organizational-os-stigmergy-morphogenesis]]
+- [[../research/prompts/R23-organizational-compiler-genome-governance]]
+- [[../research/prompts/R24-evolution-simulation-counterfactuals]]
+- [[../research/prompts/R25-agent-army-ui-ux-command-world]]
+- [[../research/prompts/R26-observability-debugger-profiler]]
+- [[../research/prompts/R27-performance-architecture]]
+- [[../research/prompts/R28-governance-security-safety]]
+- [[../research/prompts/R29-implementation-roadmap-repo-integration]]
+- [[../research/prompts/R30-evaluation-benchmarks-experiments]]
+- [[../research/prompts/R31-frontier-organizational-primitives]]
+- [[../research/prompts/R32-mission-command-for-artificial-organizations]]
+- [[../research/prompts/R33-executable-doctrine-and-after-action-learning]]
+- [[../research/prompts/R34-federated-agent-armies-protocol]]
+- [[../research/prompts/R35-laws-of-artificial-organizations]]
+- [[../research/prompts/R36-temporal-echelons-multi-horizon-agency]]
+- [[../research/prompts/R37-cognitive-logistics-and-readiness]]
+- [[../research/prompts/R38-living-general-staff-running-estimates]]
+- [[../research/prompts/R39-intent-centric-agentic-computing]]
+- [[../research/prompts/R40-artificial-organization-engineering-as-field]]
+- [[../research/prompts/R41-human-factors-and-visualization-science]]
+- [[../research/prompts/R42-organizational-dsl-and-org-ir]]
+- [[../research/prompts/R43-knowledge-capability-economy]]
+- [[../research/prompts/R44-trust-reputation-epistemic-independence]]
+- [[../research/prompts/R45-mechanism-design-resource-markets]]

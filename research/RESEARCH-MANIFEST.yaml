@@ -1,0 +1,61 @@
+program: agent-army
+version: 5
+updated: 2026-08-30
+
+status_vocabulary:
+  - NOT_RUN
+  - RUNNING
+  - COMPLETE
+  - SYNTHESIZED
+  - SUPERSEDED
+
+waves:
+  - id: W0
+    name: foundations
+    prompts: [R00, R01, R02]
+  - id: W1
+    name: organizational-principles
+    prompts: [R32, R39, R38, R36, R37, R35]
+  - id: W2
+    name: intelligence-runtime
+    prompts: [R21, R22, R43, R44, R33]
+  - id: W3
+    name: compilation-adaptation
+    prompts: [R23, R42, R24, R31, R45]
+  - id: W4
+    name: product-human-interface
+    prompts: [R20, R25, R41, R26]
+  - id: W5
+    name: production-architecture
+    prompts: [R27, R28, R30, R29, R34, R40]
+
+prompts:
+  R00: {status: NOT_RUN}
+  R01: {status: NOT_RUN}
+  R02: {status: NOT_RUN}
+  R20: {status: NOT_RUN}
+  R21: {status: NOT_RUN}
+  R22: {status: NOT_RUN}
+  R23: {status: NOT_RUN}
+  R24: {status: NOT_RUN}
+  R25: {status: NOT_RUN}
+  R26: {status: NOT_RUN}
+  R27: {status: NOT_RUN}
+  R28: {status: NOT_RUN}
+  R29: {status: NOT_RUN}
+  R30: {status: NOT_RUN}
+  R31: {status: NOT_RUN}
+  R32: {status: NOT_RUN}
+  R33: {status: NOT_RUN}
+  R34: {status: NOT_RUN}
+  R35: {status: NOT_RUN}
+  R36: {status: NOT_RUN}
+  R37: {status: NOT_RUN}
+  R38: {status: NOT_RUN}
+  R39: {status: NOT_RUN}
+  R40: {status: NOT_RUN}
+  R41: {status: NOT_RUN}
+  R42: {status: NOT_RUN}
+  R43: {status: NOT_RUN}
+  R44: {status: NOT_RUN}
+  R45: {status: NOT_RUN}

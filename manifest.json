@@ -1,0 +1,762 @@
+{
+  "name": "agent-army-research-v5",
+  "generated": "2026-08-30",
+  "standalone": true,
+  "obsidian_ready": true,
+  "markdown_files": 132,
+  "total_files_before_manifest": 149,
+  "research_prompts": 29,
+  "quality_checks": {
+    "external_pack_dependencies": 0,
+    "research_prompts_under_1000_chars": 0,
+    "zero_byte_markdown": 0,
+    "validator_exit_code": 0
+  },
+  "files": [
+    {
+      "path": ".gitignore",
+      "bytes": 113,
+      "sha256": "755859684bdcfbbbc1cb53b5e42eb5b6b96256ef7bd20aca14c5840c857d20c9"
+    },
+    {
+      "path": ".obsidian/app.json",
+      "bytes": 192,
+      "sha256": "666f2fe90ab0a000425c98ab6e28ba1ef11232850a9b2692ea0dfc6dbcb5370c"
+    },
+    {
+      "path": ".obsidian/core-plugins.json",
+      "bytes": 379,
+      "sha256": "fbc11bab8262f5d80f8ff53d0207cc39042e30c0a2b78aecc430915b5fd782c0"
+    },
+    {
+      "path": ".obsidian/templates.json",
+      "bytes": 28,
+      "sha256": "8d6721ac59b27ef462f734773f902ef499983c6e1b8081794f736ee3976365b4"
+    },
+    {
+      "path": "CLAUDE.md",
+      "bytes": 2006,
+      "sha256": "f040824d372f34fc87f80b45c9a7d5de2716a4f41acee15a7459bea1b63b1d40"
+    },
+    {
+      "path": "HOME.md",
+      "bytes": 2410,
+      "sha256": "43d4df9c4e35912cf54f69ae4fe7e373019003033dea732190b8b1e03c0a7958"
+    },
+    {
+      "path": "INDEX.md",
+      "bytes": 7121,
+      "sha256": "a96cfe5bfa150b43a4ca3e732e0b09505d640e5af74b26009fb0a3546aa70b2b"
+    },
+    {
+      "path": "Makefile",
+      "bytes": 62,
+      "sha256": "12b42764d440a7b58c50c167f5b6f357d8d0966aa40a0e7cef5e9da70d46c416"
+    },
+    {
+      "path": "PROGRAM_MANIFEST.md",
+      "bytes": 1785,
+      "sha256": "a473da75b9894a9e5d8b070b261441b3e15c78bc502246976e81d99210c5b904"
+    },
+    {
+      "path": "README.md",
+      "bytes": 5827,
+      "sha256": "d0c347812dd7507114a4c74568249ab8a4477fa77466635a5c894b91fadb855a"
+    },
+    {
+      "path": "START_HERE.md",
+      "bytes": 1691,
+      "sha256": "95476bb50b6e71ce8cb8358183667bd7f7d8abad3e31be1993e1fc7508a9173f"
+    },
+    {
+      "path": "adr/ADR-0001-keep-agent-army-research-separate.md",
+      "bytes": 1005,
+      "sha256": "e4f03126895947efda1e19af347e83cd6973b433599c02dd2b77e8b9e181a70b"
+    },
+    {
+      "path": "adr/ADR-0002-event-log-as-organizational-source.md",
+      "bytes": 1132,
+      "sha256": "79ff979b3fb0584ce99fec8281d377278da70b8d417702c122d6ac138987c5b0"
+    },
+    {
+      "path": "adr/ADR-0003-materialized-world-state.md",
+      "bytes": 945,
+      "sha256": "e65f8c60cf7df27ddb21523074380455bd5570309120e8c439b3b83220bb2d23"
+    },
+    {
+      "path": "adr/ADR-0004-no-random-agent-animation.md",
+      "bytes": 985,
+      "sha256": "3d394fc4bf58ec6dd675908a69224f73c04d009290e0f1bb806f14dc9e9eb52c"
+    },
+    {
+      "path": "adr/ADR-0005-typed-epistemic-objects.md",
+      "bytes": 866,
+      "sha256": "3b9a74b7a543dbf6a06fbca0f5babb43c3e344dc50e2ca88350f6fc3ae2ff7a0"
+    },
+    {
+      "path": "adr/ADR-0006-intent-before-adaptive-autonomy.md",
+      "bytes": 825,
+      "sha256": "f6c004ff6506c4e43d7fdaeddf96b598effb87d701ee573c396d0bc93beb89d7"
+    },
+    {
+      "path": "adr/ADR-0007-evolution-offline-first.md",
+      "bytes": 857,
+      "sha256": "076c19d98a7b713eb77ee351a5015cf41a93ac5ce604f411dd7dead9b8f84cf4"
+    },
+    {
+      "path": "architecture/00-target-architecture.md",
+      "bytes": 4849,
+      "sha256": "9e863f81d9f8a87550bda8e88cdb5626dd335e45046787ca89b7293e6c31a55a"
+    },
+    {
+      "path": "architecture/01-intent-contract-schema.md",
+      "bytes": 2009,
+      "sha256": "e07fa7fb748a58bcb9dff2652ce664a8c6d897c8e7d76916c73c9c286fe75a71"
+    },
+    {
+      "path": "architecture/02-organizational-staff-mesh.md",
+      "bytes": 1417,
+      "sha256": "da0945d28b03d55ddb0a95c767cc3c7019a724d7dd6250946bec6916d83386f6"
+    },
+    {
+      "path": "architecture/03-cognitive-logistics.md",
+      "bytes": 1299,
+      "sha256": "f08820ab849baab0ed8f03885799e014e3f26006c50bca74479581bc329a1722"
+    },
+    {
+      "path": "architecture/04-event-and-world-state-model.md",
+      "bytes": 1450,
+      "sha256": "e7cfde658f8148c2df2d435fb0beafcc9d4d231b64710433c828ef0f96c68f28"
+    },
+    {
+      "path": "architecture/05-temporal-echelons.md",
+      "bytes": 827,
+      "sha256": "32583766a20cb21527f042e82c2c969c37051800930eec2744ae191a7882f1ae"
+    },
+    {
+      "path": "architecture/06-knowledge-evidence-model.md",
+      "bytes": 1187,
+      "sha256": "87cce9661d5415a82acac39b312d497c1c5a482b4b29685dc3725023340d59d8"
+    },
+    {
+      "path": "architecture/07-skill-capability-doctrine-model.md",
+      "bytes": 1146,
+      "sha256": "b7c1a5974f1fcebc32c714c7bea0b74ca819c165a1986ec92f35e18110131c53"
+    },
+    {
+      "path": "architecture/08-organization-compiler-pipeline.md",
+      "bytes": 838,
+      "sha256": "7fa5cfb7ede092b3473830e5127f65c14883d9e9e182c0873d0bd879e3db24bf"
+    },
+    {
+      "path": "architecture/09-organizational-debugger-model.md",
+      "bytes": 1284,
+      "sha256": "9c47059273e606f987444abea11bb84f18a0b627c3c29a1f186235f33cb15f02"
+    },
+    {
+      "path": "architecture/10-federation-protocol-draft.md",
+      "bytes": 849,
+      "sha256": "b48fe3d9df3305d83683e9d6227070dae3108595bef8ccc5e9a62e5394052253"
+    },
+    {
+      "path": "architecture/11-evolution-chamber-architecture.md",
+      "bytes": 1526,
+      "sha256": "50ceab32f1beb687465716fa944ba4e77ab8b4140b03d51988ca68d657789f32"
+    },
+    {
+      "path": "architecture/12-performance-reference-architecture.md",
+      "bytes": 863,
+      "sha256": "b7a5ea02936744cdb086ddbfb750af66ed862a51dbc64b7c0565e6597a26c53c"
+    },
+    {
+      "path": "assets/.gitkeep",
+      "bytes": 42,
+      "sha256": "7eb96713b453d32f7baf82e9cd77397c0d52dd7b601e5066c41e076c6719b37a"
+    },
+    {
+      "path": "claude-skills/doctrine-engineer/SKILL.md",
+      "bytes": 916,
+      "sha256": "71f24ba8540fe536829ba6ca43a695b96d73d179de991ea7658733f5381d32c1"
+    },
+    {
+      "path": "claude-skills/evidence-auditor/SKILL.md",
+      "bytes": 1050,
+      "sha256": "3ae6391a7f08fbdfd2dade2105819e0ac0e248631ad2edb75bc3e8d2b3b023fa"
+    },
+    {
+      "path": "claude-skills/experiment-designer/SKILL.md",
+      "bytes": 807,
+      "sha256": "5ccb2413dc0b1012ee90fa1f2eabba1bda4a4814babcc5d3cc95d9eb8f215381"
+    },
+    {
+      "path": "claude-skills/knowledge-curator/SKILL.md",
+      "bytes": 892,
+      "sha256": "e2a590cfc6fbce08ed330fe270a8f4f8961f15c2ccd8bea931d5224ed779c997"
+    },
+    {
+      "path": "claude-skills/repo-integrator/SKILL.md",
+      "bytes": 928,
+      "sha256": "77ddc9bc3ffeb57e87f6fd8502bdc6b07f69220e5546dc4d00376188b48a1988"
+    },
+    {
+      "path": "claude-skills/research-synthesizer/SKILL.md",
+      "bytes": 1229,
+      "sha256": "a4a900d000a9ee256d8cb7e1ecbaf78234acb19a29c95615191db770cdd7a995"
+    },
+    {
+      "path": "claude-skills/systems-architect/SKILL.md",
+      "bytes": 983,
+      "sha256": "053d04605d91b2d4b73ede43da51a07f1a4ae73b2ccd79bb597d49ef065f8c9f"
+    },
+    {
+      "path": "claude-skills/ui-architect/SKILL.md",
+      "bytes": 1020,
+      "sha256": "8e280f829d2dd1809588c034a0f949d472c383a71cc9fa900e4fbd67cfba8448"
+    },
+    {
+      "path": "design/00-agent-army-design-system.md",
+      "bytes": 1930,
+      "sha256": "a740bb612da89f22add8341b8409b97cc7bef2ac33ac78e8948bd13bdabddd47"
+    },
+    {
+      "path": "design/01-ui-surfaces.md",
+      "bytes": 1437,
+      "sha256": "d143ad745795dcfebbffc068128b06729bc0affbf952262750ff05f17ed30f09"
+    },
+    {
+      "path": "design/02-command-world-layout.md",
+      "bytes": 2114,
+      "sha256": "ab2b3cbe635b623618ddf043cd65f167cd9de5b3d242e2160a1e098ebf5897f2"
+    },
+    {
+      "path": "design/03-lenses-and-overlays.md",
+      "bytes": 1120,
+      "sha256": "463b687408b7b135309f43a036b68f4b1987cdacae9f8433a9afd2f0049824d8"
+    },
+    {
+      "path": "design/04-motion-and-interaction.md",
+      "bytes": 1021,
+      "sha256": "a7164a68b262c15672de37f7d8bf4361d1ec1ee1843f09bd014e9cfb7d71d7ff"
+    },
+    {
+      "path": "design/05-claude-ui-design-prompt.md",
+      "bytes": 2128,
+      "sha256": "cb5c1785d74585367827c6ba7476dd62c48f240cbab4835e2e6d3d11a96c4b77"
+    },
+    {
+      "path": "design/06-design-tokens-draft.md",
+      "bytes": 937,
+      "sha256": "c0a8c2b12c7f2476b0656e47088a10915bb8c4204b3893c765c42f26fcfb174e"
+    },
+    {
+      "path": "design/07-component-specification.md",
+      "bytes": 906,
+      "sha256": "a6cbb5155a2b1d1f47505a8e50d9fa15e66808f15bb77e203231e5baee3fe50d"
+    },
+    {
+      "path": "design/08-screen-spec-hq.md",
+      "bytes": 832,
+      "sha256": "1574e19039e0cef63be3fb2f1f3eb01637ff55272b0dda8dffd96c45792ddf93"
+    },
+    {
+      "path": "design/09-screen-spec-command-world.md",
+      "bytes": 1625,
+      "sha256": "a5d2442f011c423c5de7ea07a3e47a299c0b6cff1c3b57957d3bec13f11eee8a"
+    },
+    {
+      "path": "design/10-screen-spec-knowledge-debugger.md",
+      "bytes": 1152,
+      "sha256": "2ff73864fba833622659c8a722a35061a0cc7aa4ae2da778adc68774cc70d6de"
+    },
+    {
+      "path": "design/11-screen-spec-organizational-debugger.md",
+      "bytes": 1283,
+      "sha256": "75d0323d595f80fa57a581fa7a2ca0ebd3715386861c6930fdf75f5ea61051a2"
+    },
+    {
+      "path": "design/12-screen-spec-evolution-chamber.md",
+      "bytes": 1242,
+      "sha256": "40898e5c125ae7d339109001f1f95db1b714a56e19f7e8ae139af573324dee66"
+    },
+    {
+      "path": "design/13-prototype-research-plan.md",
+      "bytes": 1312,
+      "sha256": "b19e989fe1a0b2a4eb9199deb630c9ba54b72edb4f004d8d0cac2ce622b2aef8"
+    },
+    {
+      "path": "experiments/00-experiment-plan.md",
+      "bytes": 1306,
+      "sha256": "995a2234dbf31465f0f312905eef9db705453911ce1a051609dc5e8de69be5c8"
+    },
+    {
+      "path": "experiments/01-benchmark-mission-corpus.md",
+      "bytes": 1266,
+      "sha256": "1608a8e6be1eec609e4ae308eb0fe4397e9c2ab41f71babf778ed1d778398280"
+    },
+    {
+      "path": "experiments/02-experiment-matrix.md",
+      "bytes": 831,
+      "sha256": "9794d525da09edd2be9b82ad50a87299814db7e424aec2491333d4f613ba6f75"
+    },
+    {
+      "path": "experiments/03-organizational-chaos-tests.md",
+      "bytes": 1240,
+      "sha256": "3060470be2c69592ddf68583145b7f0feddd0c741fded5f62cf6eedfb3358579"
+    },
+    {
+      "path": "foundations/FOUNDATIONAL_LAWS_DRAFT.md",
+      "bytes": 2132,
+      "sha256": "68781831db3d850526b67bd79979d3fcbef5f37fbb01e15a1a191f22c52ed7ae"
+    },
+    {
+      "path": "foundations/R00-foundations-of-artificial-organization-engineering.md",
+      "bytes": 6603,
+      "sha256": "807a3de8bcf4f9781a7ab3bcfff588ac08d0562591d68cd5ff3fd3a4f19947f3"
+    },
+    {
+      "path": "foundations/R01-prior-art-and-novelty-boundary.md",
+      "bytes": 1477,
+      "sha256": "b6182173726e99050e00451422c8dfa398f9e7ad311a70708d8a56782ee78598"
+    },
+    {
+      "path": "foundations/R02-canonical-ontology-and-vocabulary.md",
+      "bytes": 2568,
+      "sha256": "bbe5887e38ac5572b97723955eb8ca279d74999456b1182081ec965c1a34918f"
+    },
+    {
+      "path": "governance/00-safety-and-control-boundaries.md",
+      "bytes": 987,
+      "sha256": "05bd280292b5683d8889c2211865e3970efbd4d82bcd91199410aa9bf91b67ad"
+    },
+    {
+      "path": "governance/01-constitution-draft.md",
+      "bytes": 1769,
+      "sha256": "cc9668a46a95be5ab8d36c817e22f496509a009dd84d27dbaef75b21733b6309"
+    },
+    {
+      "path": "governance/02-autonomy-matrix.md",
+      "bytes": 1483,
+      "sha256": "9a4fbce5c938e45053160f8418424e0e95a394f1c323df788bcc18758a9e4b1b"
+    },
+    {
+      "path": "handoff/CLAUDE-CREATE-RESEARCH-REPO-AND-MIGRATE.md",
+      "bytes": 7277,
+      "sha256": "250a00bf1335e6a524086158554f2d4e2915e0acc36f15b260a3507bd2637507"
+    },
+    {
+      "path": "implementation/00-implementation-principles.md",
+      "bytes": 1616,
+      "sha256": "2053699b60b927ecb9eb7ae72bc807a43ccccfb8c6ae0400e71e5a66b23f2997"
+    },
+    {
+      "path": "implementation/01-feature-flag-plan.md",
+      "bytes": 1576,
+      "sha256": "107195b3eccde054ca694ca2798d956d4cbce373d9eafa1b5b2b07056800bf6e"
+    },
+    {
+      "path": "implementation/02-test-strategy.md",
+      "bytes": 1497,
+      "sha256": "d4b173044caddc30cde13176b421fe3b77dd5498c7d73b828f53eb530f19cefe"
+    },
+    {
+      "path": "implementation/03-data-migration-strategy.md",
+      "bytes": 1286,
+      "sha256": "1823b01508bfee6b6614b7d7f98c207d6d422036ef31dcbbbc632fc4b3ca354c"
+    },
+    {
+      "path": "implementation/04-quarterly-roadmap.md",
+      "bytes": 815,
+      "sha256": "80b72bf6a02241150dbd40317fe2c5cb0e92694709c525106c3f4e26124f8736"
+    },
+    {
+      "path": "implementation/claude/00-claude-research-runner.md",
+      "bytes": 958,
+      "sha256": "e2468db0fbfb9ae7a4d7460dd49185207d7e254a197d0ce91fecfaf55b26414f"
+    },
+    {
+      "path": "implementation/claude/01-claude-implementation-boot-prompt.md",
+      "bytes": 1572,
+      "sha256": "96e806f466e157a4eda51e0137b8fa6de0af1859a33e9428ef957105e054e3bd"
+    },
+    {
+      "path": "implementation/claude/02-claude-ui-build-prompt.md",
+      "bytes": 1573,
+      "sha256": "85fc8a3ad887a4d120275588f3107e0563479828d5a8e118bb5ad81a5c8e5e12"
+    },
+    {
+      "path": "implementation/roadmap/00-roadmap.md",
+      "bytes": 1609,
+      "sha256": "1fb8f5c73f77228ad03db21c53a38b02d5a43eebc99c7a344c18ca94298360b0"
+    },
+    {
+      "path": "implementation/roadmap/01-first-two-week-build-slice.md",
+      "bytes": 1188,
+      "sha256": "40dd80cd1be3e02a4edb26baad60d4f0028f97fe65573317cbde3aa2f1843e96"
+    },
+    {
+      "path": "implementation-handoffs/HANDOFF_TEMPLATE.md",
+      "bytes": 1134,
+      "sha256": "ef7ee65fc6a03a4e7502cc25d176fac6a48d812bc0f59c4e34fc011914ceed53"
+    },
+    {
+      "path": "implementation-handoffs/README.md",
+      "bytes": 1093,
+      "sha256": "1507ad1a88ce15db82a3863f18f7d7a066ccf502f1e166af2258bbf9ba40c64b"
+    },
+    {
+      "path": "implementation-handoffs/approved/.gitkeep",
+      "bytes": 42,
+      "sha256": "7eb96713b453d32f7baf82e9cd77397c0d52dd7b601e5066c41e076c6719b37a"
+    },
+    {
+      "path": "implementation-handoffs/completed/.gitkeep",
+      "bytes": 42,
+      "sha256": "7eb96713b453d32f7baf82e9cd77397c0d52dd7b601e5066c41e076c6719b37a"
+    },
+    {
+      "path": "implementation-handoffs/proposed/.gitkeep",
+      "bytes": 42,
+      "sha256": "7eb96713b453d32f7baf82e9cd77397c0d52dd7b601e5066c41e076c6719b37a"
+    },
+    {
+      "path": "implementation-handoffs/rejected/.gitkeep",
+      "bytes": 42,
+      "sha256": "7eb96713b453d32f7baf82e9cd77397c0d52dd7b601e5066c41e076c6719b37a"
+    },
+    {
+      "path": "inbox/.gitkeep",
+      "bytes": 42,
+      "sha256": "7eb96713b453d32f7baf82e9cd77397c0d52dd7b601e5066c41e076c6719b37a"
+    },
+    {
+      "path": "maps/ARCHITECTURE.md",
+      "bytes": 1276,
+      "sha256": "144a692d5c04bf8f75cfd527115ca881aeebfdd89c36698d256f64cbbd8d1043"
+    },
+    {
+      "path": "maps/EXPERIMENTS.md",
+      "bytes": 980,
+      "sha256": "d84645169e87a241dc97730ecbc33ee0808244aa4313ddbda226e63f0d718005"
+    },
+    {
+      "path": "maps/FOUNDATIONS.md",
+      "bytes": 1308,
+      "sha256": "2476e146515110720927179edc44d31d10e8751aac33c784b3ce8771198f917b"
+    },
+    {
+      "path": "maps/GOVERNANCE.md",
+      "bytes": 1185,
+      "sha256": "6b38f61407f3c3bcfad66ab283764732e70cad7c508ebdfb401fb8d30b822e16"
+    },
+    {
+      "path": "maps/IMPLEMENTATION.md",
+      "bytes": 1050,
+      "sha256": "bae1bb8f58baa2753deb35e46e28fbf3eeed8cfa707e16eb257c3c77d24520ca"
+    },
+    {
+      "path": "maps/KNOWLEDGE-AND-LEARNING.md",
+      "bytes": 1221,
+      "sha256": "4fbe4d98eadbdf5f28705c1854bd0e0f9d1e97c22bf806a97607ed3875e53230"
+    },
+    {
+      "path": "maps/RESEARCH.md",
+      "bytes": 2141,
+      "sha256": "65eea0d1a84a8bdade70faa899eabcbfa7c34c3345491fb23aa570b550846f2c"
+    },
+    {
+      "path": "maps/UI-AND-VISUALIZATION.md",
+      "bytes": 1178,
+      "sha256": "5edd131dd8ba168ff210acb1c7c856358a27dc306727a10a76e9e3957c873962"
+    },
+    {
+      "path": "migration/.gitkeep",
+      "bytes": 42,
+      "sha256": "7eb96713b453d32f7baf82e9cd77397c0d52dd7b601e5066c41e076c6719b37a"
+    },
+    {
+      "path": "migration/MIGRATION-AUDIT-TEMPLATE.md",
+      "bytes": 1171,
+      "sha256": "88355a9011218cd60a9921ccec76cce32314eee601012fc56047342930551d1e"
+    },
+    {
+      "path": "obsidian/OBSIDIAN-GUIDE.md",
+      "bytes": 1306,
+      "sha256": "f2be8bffbd6071f53f19a3fd0a6f57f8d33b5ea004a96199a7196d8d819ee78e"
+    },
+    {
+      "path": "ontology/00-core-ontology.md",
+      "bytes": 1884,
+      "sha256": "94eb492c7faaff82175310739d9e68b386af94f721a09f6a6027db67756ceab7"
+    },
+    {
+      "path": "ontology/01-relationship-map.md",
+      "bytes": 1030,
+      "sha256": "5f6c2c11b10aba727d27d131dc710cea406fedeafd5d9291a0c799224ce7b1d0"
+    },
+    {
+      "path": "repo-boundary/AGENT-FACTORY-BRIDGE-TEMPLATES.md",
+      "bytes": 1152,
+      "sha256": "225ebace0b5523941b674def59f19c7ccba105e380de4aef223900c9be6d1a10"
+    },
+    {
+      "path": "repo-boundary/RESEARCH-VS-PRODUCT.md",
+      "bytes": 1600,
+      "sha256": "effc39226f048e13405ea90749a5442876d40a703b9062e7c96126dbd246cbf6"
+    },
+    {
+      "path": "repo-boundary/SYNC-AND-HANDOFF-PROTOCOL.md",
+      "bytes": 1027,
+      "sha256": "2ee93f987ce3541a9888b2f07adae4e0e023936a7a6b59749d21be21d3dcc155"
+    },
+    {
+      "path": "repo-boundary/WHAT-MOVES-TO-RESEARCH.md",
+      "bytes": 1000,
+      "sha256": "8d1065de98b853a985e59cdffc4c8d252b90b55b86080ce8ac181f963cbfdd5d"
+    },
+    {
+      "path": "repo-boundary/WHAT-STAYS-IN-AGENT-FACTORY.md",
+      "bytes": 1363,
+      "sha256": "d3044f33eca074a4fcbfc29468999999b9c6f718cdd56e3f8e3929872a1bd611"
+    },
+    {
+      "path": "research/ANSWER_TEMPLATE.md",
+      "bytes": 1593,
+      "sha256": "d93dd4b8d31cffe9cfd240eee126efe283e82982a6975b87e452b22ca1f57b86"
+    },
+    {
+      "path": "research/DEEP-RESEARCH-RUNBOOK.md",
+      "bytes": 1103,
+      "sha256": "b00745963d296d4e604d274df157225c62df5443bba9e56370246dc1dba267dd"
+    },
+    {
+      "path": "research/HYPOTHESIS_LEDGER.md",
+      "bytes": 812,
+      "sha256": "5fa34e2e93a9f94d732228283722b1e634a2010f059f1e5d3c097c0125d97868"
+    },
+    {
+      "path": "research/RESEARCH-MANIFEST.yaml",
+      "bytes": 1367,
+      "sha256": "f10d17b2e9eddd4ac169fdeaa0decd755db631a42cc643b5920b9be759f93e86"
+    },
+    {
+      "path": "research/RESEARCH_PROTOCOL.md",
+      "bytes": 1041,
+      "sha256": "ced9da0457e6f9caf3c1ce47c70c686f212cb84444618794cf426e1bbc9de5ce"
+    },
+    {
+      "path": "research/SYNTHESIS_TEMPLATE.md",
+      "bytes": 1614,
+      "sha256": "328bd498fe8521f5abe1f1b336d183219e630ed82ee4b06d5d8e48d32033039c"
+    },
+    {
+      "path": "research/answers/.gitkeep",
+      "bytes": 42,
+      "sha256": "7eb96713b453d32f7baf82e9cd77397c0d52dd7b601e5066c41e076c6719b37a"
+    },
+    {
+      "path": "research/context/00-source-leads-and-research-areas.md",
+      "bytes": 2182,
+      "sha256": "4c787d96a8b206f4d85c40a92fc8c9e4b026194dfdb4740b830c90df17b734db"
+    },
+    {
+      "path": "research/context/01-army-organizational-mechanisms.md",
+      "bytes": 1620,
+      "sha256": "ee66b483e65f43732a8df6bc9830e1539a1fad26b955a8e5a683bfe283849c1f"
+    },
+    {
+      "path": "research/context/02-agent-army-concept-catalog.md",
+      "bytes": 1039,
+      "sha256": "af0d88fd5e3dde05d3d1b587612b9f90ed07089275f855324c723bebd0795b8a"
+    },
+    {
+      "path": "research/prompts/R20-product-thesis-artificial-organization-platform.md",
+      "bytes": 1627,
+      "sha256": "c23d3e57a700258b3e0c218914721432e9191cbb1af89c0a45d35094779aef0d"
+    },
+    {
+      "path": "research/prompts/R21-collective-cognition-knowledge-learning.md",
+      "bytes": 1607,
+      "sha256": "30eb24a5b1e1fc6e91e04520d6cff05c2339b433639d90c8014df6f9979c98d6"
+    },
+    {
+      "path": "research/prompts/R22-organizational-os-stigmergy-morphogenesis.md",
+      "bytes": 1652,
+      "sha256": "0727ddb6e028b02ca8e883375cba6bf0f8cf006db595019a2aac33a34995669a"
+    },
+    {
+      "path": "research/prompts/R23-organizational-compiler-genome-governance.md",
+      "bytes": 1467,
+      "sha256": "3f0e80c549cfefb8056ec5dbd46fa4e616c9a3546031a0a5bd73ef9b6ec1a6e5"
+    },
+    {
+      "path": "research/prompts/R24-evolution-simulation-counterfactuals.md",
+      "bytes": 1388,
+      "sha256": "2d1da4d2a40d995934bb0586bb777bad46b236319d355f9b28e65dc58af3e365"
+    },
+    {
+      "path": "research/prompts/R25-agent-army-ui-ux-command-world.md",
+      "bytes": 2004,
+      "sha256": "41451f0ec9262911fd486cf229a2fff4a7d6a55f35258752f3e1682eb35313d7"
+    },
+    {
+      "path": "research/prompts/R26-observability-debugger-profiler.md",
+      "bytes": 1393,
+      "sha256": "5d8062ffe6e5d54b04a23a507f5e39291e0b343afa5938ac1b48bc4d2a93666d"
+    },
+    {
+      "path": "research/prompts/R27-performance-architecture.md",
+      "bytes": 1481,
+      "sha256": "c7d699bc686709330bdc465742ce7a3cb2dde98522e612b246e8a1c51eb126a6"
+    },
+    {
+      "path": "research/prompts/R28-governance-security-safety.md",
+      "bytes": 2045,
+      "sha256": "87354628ec6274410ff79ad4af49ee73f86cb0aaa945e401b4211a6341fb4dfc"
+    },
+    {
+      "path": "research/prompts/R29-implementation-roadmap-repo-integration.md",
+      "bytes": 2160,
+      "sha256": "0d0396763d62885d13a422a4dcc84149396d4ad19e207c64c32e9e461f934b9d"
+    },
+    {
+      "path": "research/prompts/R30-evaluation-benchmarks-experiments.md",
+      "bytes": 2512,
+      "sha256": "abc47840bf1240eae027f21b4ee17cc48e06c9a9fbb108d504705aa42b840c18"
+    },
+    {
+      "path": "research/prompts/R31-frontier-organizational-primitives.md",
+      "bytes": 3631,
+      "sha256": "d65a52b7f9d51bb5eaafb5b329e18cbf82457df79f4e6056e35f3079a55aafc7"
+    },
+    {
+      "path": "research/prompts/R32-mission-command-for-artificial-organizations.md",
+      "bytes": 3385,
+      "sha256": "bd7f84d03079ac0689d6d958c2462fac4022f334ae1bd6d102fba56014c98a85"
+    },
+    {
+      "path": "research/prompts/R33-executable-doctrine-and-after-action-learning.md",
+      "bytes": 1562,
+      "sha256": "a8a1a933927b2227307e7516ecd4c48a89c1d62037e7fd4098409b40af4f044d"
+    },
+    {
+      "path": "research/prompts/R34-federated-agent-armies-protocol.md",
+      "bytes": 1668,
+      "sha256": "041c6ac9a2fcede503729b3e9e59b3f06d5fa3f6846ecf9848efa4488fef4962"
+    },
+    {
+      "path": "research/prompts/R35-laws-of-artificial-organizations.md",
+      "bytes": 2145,
+      "sha256": "4fb025b77935171602a1cd85a481713c3943f978422520f327b3e5d4a858f53a"
+    },
+    {
+      "path": "research/prompts/R36-temporal-echelons-multi-horizon-agency.md",
+      "bytes": 1431,
+      "sha256": "d2e0f72697973f80ce7e7e1b33d0ce99626dd9657ce1332cde778051caa4fb2f"
+    },
+    {
+      "path": "research/prompts/R37-cognitive-logistics-and-readiness.md",
+      "bytes": 1413,
+      "sha256": "5eef14bd9ac7a2845056faa93320ca9a51e1378d3459c1510db6bee4a6b3b4da"
+    },
+    {
+      "path": "research/prompts/R38-living-general-staff-running-estimates.md",
+      "bytes": 1512,
+      "sha256": "cff8bb6ca039126be48695687fa2c99f4e4d58d664af3e9372bb74fe608a4d5a"
+    },
+    {
+      "path": "research/prompts/R39-intent-centric-agentic-computing.md",
+      "bytes": 1417,
+      "sha256": "a30d682de8176ae4b6a588d8334f5223b15759f38fb6630aa27a82783e250df6"
+    },
+    {
+      "path": "research/prompts/R40-artificial-organization-engineering-as-field.md",
+      "bytes": 2336,
+      "sha256": "85cf9a92c363a789fcefe2b8f89f3df9918ee38cf0efdcdcf6192e32d8beec1f"
+    },
+    {
+      "path": "research/prompts/R41-human-factors-and-visualization-science.md",
+      "bytes": 2870,
+      "sha256": "f215afff008e5a004528b00ddccf77d7f69cc997d518a8c85c78a5bc30a13b36"
+    },
+    {
+      "path": "research/prompts/R42-organizational-dsl-and-org-ir.md",
+      "bytes": 2260,
+      "sha256": "7512a92a34cab7080959c8f3db3bb462191e1122d278ef8193b564cac4731819"
+    },
+    {
+      "path": "research/prompts/R43-knowledge-capability-economy.md",
+      "bytes": 2099,
+      "sha256": "5becb16878511c59ceeca6336c0957712d2b2735c71ca751f02ce28e2081186a"
+    },
+    {
+      "path": "research/prompts/R44-trust-reputation-epistemic-independence.md",
+      "bytes": 3432,
+      "sha256": "3be7d12b582af4d68beee42b90dce856a01445310109a1adff5b3928b0916db1"
+    },
+    {
+      "path": "research/prompts/R45-mechanism-design-resource-markets.md",
+      "bytes": 3252,
+      "sha256": "c276c05bdbf4ef8ec9e2793a75d5ff5c675c092339faf85117364a20e6dc2c32"
+    },
+    {
+      "path": "research/sources/.gitkeep",
+      "bytes": 42,
+      "sha256": "7eb96713b453d32f7baf82e9cd77397c0d52dd7b601e5066c41e076c6719b37a"
+    },
+    {
+      "path": "research/synthesis/.gitkeep",
+      "bytes": 42,
+      "sha256": "7eb96713b453d32f7baf82e9cd77397c0d52dd7b601e5066c41e076c6719b37a"
+    },
+    {
+      "path": "scripts/validate_repo.py",
+      "bytes": 2841,
+      "sha256": "d34fd888abab3bc0ccf74a2f486690cc1f22c4ebb6fc55ae92fdedef3a53f404"
+    },
+    {
+      "path": "templates/adr.md",
+      "bytes": 1044,
+      "sha256": "9b314db75beb550186732f341e37375a980840c361a4e00c18aac2064ec1e699"
+    },
+    {
+      "path": "templates/concept-note.md",
+      "bytes": 1008,
+      "sha256": "5825297325a7de809651ccaf36f0cc9a8c65082caa91eaa3807150aeb305625f"
+    },
+    {
+      "path": "templates/implementation-handoff.md",
+      "bytes": 1134,
+      "sha256": "ef7ee65fc6a03a4e7502cc25d176fac6a48d812bc0f59c4e34fc011914ceed53"
+    },
+    {
+      "path": "templates/research-answer.md",
+      "bytes": 1593,
+      "sha256": "d93dd4b8d31cffe9cfd240eee126efe283e82982a6975b87e452b22ca1f57b86"
+    },
+    {
+      "path": "templates/research-synthesis.md",
+      "bytes": 1614,
+      "sha256": "328bd498fe8521f5abe1f1b336d183219e630ed82ee4b06d5d8e48d32033039c"
+    },
+    {
+      "path": "templates/source-note.md",
+      "bytes": 1160,
+      "sha256": "669691aab41a75ef0a49a24818c759b1ced03a996c5e86c8aaaf020b233e9d09"
+    },
+    {
+      "path": "vision/00-agent-army-master-context.md",
+      "bytes": 5335,
+      "sha256": "80a9408480acce376a2b797cbe91abd46421864ae58f39bd61fc90e4a8b431e4"
+    },
+    {
+      "path": "vision/01-vocabulary-and-primitives.md",
+      "bytes": 3100,
+      "sha256": "da0561fae090db541986c7b6d7c86fdd51afd98e349a0a5ed859bbb13c64bdf3"
+    },
+    {
+      "path": "vision/02-whitepaper-outline.md",
+      "bytes": 2138,
+      "sha256": "ec85d5273ae98243e322bf72a5b15ae0064b6b06e93cdd28b19639b68a0db265"
+    }
+  ]
+}
