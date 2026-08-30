@@ -38,7 +38,38 @@ Versions: **v1** 9 Dec 2025 · **v2** 17 Dec 2025 · **v3** 8 Apr 2026.
 | 4 | …with 95% CI [−18.6%, +25.7%] | `agent-factory/docs/research/answers/R2-answer-topology.md:15` | **SUPPORTED at source, DROPPED downstream** — the answer states it; the blueprint header and the first version of `CURRENT_STATE.md` both omitted it |
 | 5 | Sequential tasks degrade 39–70% | `orchestrator_team.yaml:18` | **SUPPORTED** — v3's abstract names **−70.0% on sequential planning** as one pole |
 | 6 | A centralised system improved a parallelisable financial task by +80.9% | `R2-answer-topology.md:15` | **SUPPORTED** — v3 abstract says **+80.8%** (version drift of 0.1pp, consistent) |
-| 7 | "Landed in Nature MI 2026", paywalled, NOT-ACCESSIBLE | R01 | **UNSUPPORTED** — the arXiv record shows **no journal reference**. And the expanded version is *not* paywalled: it is arXiv v3, free |
+| 7 | "Landed in Nature MI 2026", paywalled, NOT-ACCESSIBLE | R01 | ~~UNSUPPORTED~~ → **SUPPORTED**. My verdict was wrong — see "Correction to this file" below |
+
+### ⚠ Correction to this file — claim 7 was verified wrongly, by me
+
+Added after `W0-audit-prior-art-citations.md` challenged it. **R01 was right and this file was
+wrong.** The DOI resolves; verified independently against the Crossref API:
+
+> **`10.1038/s42256-026-01268-y`** — *"Capable language models can outgrow the benefits of
+> collaboration"*, **Nature Machine Intelligence 8(7):1157–1172**, published 24 July 2026,
+> 20 authors, Springer.
+
+The paper was **retitled** between preprint and journal, which is why arXiv carries no
+`journal-ref` and why it does not surface under the preprint name.
+
+**The error was an instrument error, and it is the one this estate has a written rule about.**
+I checked the arXiv `journal-ref` field, found it empty, and reported `UNSUPPORTED` — inferring a
+negative from an instrument I had not shown could see a retitled journal version. That is precisely
+*"a zero from an instrument you have not proved can still see is not a measurement."* The correct
+verdict on the evidence I actually had was `NOT-VISIBLE`, not `UNSUPPORTED`.
+
+The auditing lane did what I did not: it ran a **discriminating test**, confirming that a
+*fabricated* Nature article number produces the same 303 redirect — so the redirect proves nothing
+either way — and then resolved the DOI handle, which does.
+
+⭐ **The retitle is worth more than the correction.** The preprint is *Towards a Science of Scaling
+Agent Systems*. The peer-reviewed paper is **"Capable language models can outgrow the benefits of
+collaboration."** Peer review promoted the capability-saturation effect — not the aggregate mean —
+to the headline, and that title is a direct argument that multi-agent structure buys less as the
+base model improves. For a programme considering supervisor tiers, the title *is* the finding.
+
+This correction propagated to `agent-factory/docs/agent-army/CURRENT_STATE.md`, which had already
+been committed and pushed with the wrong verdict. Now fixed there too.
 
 ### On claim 3
 
