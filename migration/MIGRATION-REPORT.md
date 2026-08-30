@@ -122,12 +122,19 @@ process, recovered, and archived here before anything else proceeded.
 | `factory/` source present | 42 modules, 32 test files — unchanged |
 | Import-time doc validation (`dispatch`, `synthesis`, `readiness`, `board`, `goals`, `teamplan`, `evidence`, `tasks`, `contract`, `corpus`) | **pass** — 30 gates, 5 lanes resolve |
 | `git status` after bridge creation | only `?? docs/agent-army/` |
-| `python -m pytest -q` | **exceeded a 600 s budget and was still running when this report was written.** Not reported as a pass. See §Open items. |
+| `python -m pytest -q` (full suite) | **15 failed, rest passed** — all 15 in `tests/test_mutation_anchors_still_match.py`, and all 15 **reproduce at `b4bac0d`**, the parent commit, verified in a detached worktree. Pre-existing, not caused by this migration |
+| Docs-dependent subset (`dispatch`, `synthesis_current`, `findings`, `evidence_classes`, `tasks`, `contract`, `corpus`, `repo_root`, `tracker_is_current`, `research_run`, `research_safeguards`) | **96 passed, 0 failed** |
 | `python scripts/validate_repo.py` (research repo) | 0 errors, 0 warnings |
 
-⚠ The full pytest run is **not** claimed as green. The import check above proves the doc-dependent
-module-scope validations still resolve, which is the only thing this migration could plausibly have
-broken — but that is a narrower claim than "the suite passes", and the two should not be conflated.
+⚠ **The suite is not green, and was not green before this migration either.** The 15 failures are
+`mutate_readiness_probes.py` anchors that no longer match their target — e.g.
+`MAX_TERMINATION_ATTEMPTS = 4` *"appears 0 time(s) in orchestrator/pipelines.py, so the mutation
+cannot be applied and that control is UNTESTED"*. They belong to the readiness-generator work on
+the parent branch, touch no file this migration created, and are reported here rather than
+absorbed into a claim of success.
+
+The suite is also slow: repeated foreground runs were still going at 8–9 minutes. The full result
+above comes from a run that was allowed to finish in the background.
 
 ---
 
@@ -259,9 +266,10 @@ economy) as a live example rather than a hypothetical.
 
 ## Open items
 
-1. **Full pytest run in agent-factory** — exceeded a 600 s budget and was not observed to complete.
-   Re-run it before merging `docs/agent-army-research-separation`. The change is documentation-only
-   and adds no imports, so the risk is low, but it is unverified.
+1. **15 pre-existing test failures in agent-factory** — `tests/test_mutation_anchors_still_match.py`,
+   reproducing at `b4bac0d`. Not this migration's to fix, but they should be fixed before
+   `feat/readiness-generator` merges, because they mean five readiness controls are currently
+   **UNTESTED** rather than passing.
 2. **Eight content collisions** — C3 and C4 should be resolved before W5 and before R29 is
    dispatched respectively.
 3. **Push the research repository** — see §GitHub.
