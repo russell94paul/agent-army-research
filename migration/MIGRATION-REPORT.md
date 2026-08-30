@@ -11,11 +11,11 @@ collisions (§Content collisions).
 |---|---|
 | **path** | `C:/Users/PaulRussell/repos/agent-army-research` |
 | **branch** | `main` |
-| **remote** | see §GitHub below |
+| **remote** | `origin → https://github.com/russell94paul/agent-army-research.git` (**PRIVATE**) — created, **not yet pushed**, see §GitHub |
 | **file count** | **167 tracked** files, 146 markdown. 175 on disk — the extra 8 are gitignored personal Obsidian state (`appearance.json`, `themes/`, `workspace.json`) |
 | **v5 baseline** | 150 files, 132 markdown — unmodified |
 | **added by migration** | 17 tracked files: `legacy/` 13 · `migration/` 3 · `research/context/03-…` 1. Modified: `.gitignore`, `INDEX.md`, and two `.obsidian/` files Obsidian rewrote on first open |
-| **commit hashes** | `8f1c276` bootstrap · migration commit recorded in `git log --oneline` |
+| **commit hashes** | `8f1c276` bootstrap · `b627694` migration · `6e9b9e9` test-result correction · plus the commit carrying this line |
 | **validation** | `python scripts/validate_repo.py` → `{"markdown_files": 146, "research_prompts": 29, "errors": 0, "warnings": 0}`, exit 0 |
 
 Regenerate the counts above with:
@@ -272,7 +272,9 @@ economy) as a live example rather than a hypothetical.
    **UNTESTED** rather than passing.
 2. **Eight content collisions** — C3 and C4 should be resolved before W5 and before R29 is
    dispatched respectively.
-3. **Push the research repository** — see §GitHub.
+3. **Publish both repositories** — neither is pushed. The research repo's push was refused by the
+   local direct-to-main guard; the agent-factory branch simply has not been pushed yet. Commands
+   in §GitHub.
 4. **Concurrent session** — `agent-factory-17` may hold its own view of this migration. Reconcile
    before merging anything.
 
@@ -281,15 +283,38 @@ economy) as a live example rather than a hypothetical.
 ## GitHub
 
 `gh auth status` → authenticated as `russell94paul` (keyring), scopes
-`gist, read:org, repo, workflow, write:packages`. The repository is created **private**; the
-agent-factory remote is untouched.
+`gist, read:org, repo, workflow, write:packages`.
 
-If the create step did not run, the exact command is:
+**Done — the repository exists and is private.**
+
+```text
+https://github.com/russell94paul/agent-army-research    visibility: PRIVATE    isEmpty: true
+origin   https://github.com/russell94paul/agent-army-research.git   (fetch + push)
+```
+
+The agent-factory remote (`personal → russell94paul/agent-factory`) is **untouched**, as required.
+
+**Not done — the push.** It was refused by the local guard hook
+(`workflow-kit/hooks/guard.py`):
+
+> `BLOCKED: direct push to main/master. → Branch, then open a PR so the change stays revertible.`
+
+That guard is deliberate policy, so it was **not** worked around. The remote is empty and all four
+commits are local. This is a first push to an empty repository — there is no history to overwrite —
+so publishing is safe whenever you want it:
 
 ```bash
 cd C:/Users/PaulRussell/repos/agent-army-research
-gh repo create agent-army-research --private --source . --remote origin
-git push -u origin main
+git push -u origin main      # run outside the agent, or from the ! prompt
+```
+
+The agent-factory side is likewise **committed but unpushed**, on its own branch:
+
+```bash
+cd C:/Users/PaulRussell/repos/agent-factory
+git push -u personal docs/agent-army-research-separation
+gh pr create --base feat/readiness-generator \
+  --title "docs: separate Agent Army research from product repository"
 ```
 
 ---
