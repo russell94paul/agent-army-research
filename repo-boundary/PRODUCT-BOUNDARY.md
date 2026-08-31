@@ -202,27 +202,41 @@ Identity is the quiet blocker. Every refusal rule in `admit()` depends on trusti
 
 | Component | Function | Status |
 |---|---|---|
-| **Policy enforcement point** | Enforces `may` / `may_not` against real systems. Without it, bounded authority is advisory. | `ABSENT` |
+| **Policy enforcement point** | Enforces `may` / `may_not` against real systems. Without it, bounded authority is advisory. | `PARTIAL` — **`conductor/engine/work_guard.py`** |
 | **Credential broker** | Issues scoped, short-lived credentials per mission. | `ABSENT` |
 | **Cost metering** | Live budget caps and chargeback, not retrospective. | `PARTIAL` — `runs.py` is retrospective and repo-local |
 
-⚠ The enforcement point is the largest single gap. `authority.may_not: [mutate prod]` is a
-*sentence in a YAML file* until something sits in the request path and refuses. Everything the
-governance layer promises rests on a component nobody has built.
+⚠ **Corrected 2026-08-30.** This row read `ABSENT` when first written, because the inventory was
+taken across `agent-factory` and this repository and never opened `conductor`. It exists there.
+`conductor/engine/work_guard.py` is a real enforcement point — *"repo safety checks, session locks,
+and execution gating"* — driven by a declarative policy at `conductor/config/work-guard-policy.json`
+carrying `blockedPaths`, `approvalRequiredFor`, `highRiskRequiresApproval` and
+`staleLockBehavior: "require-approval"`. Its `safe_to_run(repo_path)` is an `admit()`-shaped
+function that already exists.
+
+**The limit is scope, not existence.** work_guard enforces at *repo, session and git* granularity —
+dirty working tree, concurrent worktrees, lock heartbeats, blocked paths. It does not scope
+credentials, bound blast radius against a production system, or carry per-mission authority. So the
+gap is narrower and more tractable than "nobody has built this": the shape is proven and needs
+extending to capability scope, not inventing.
 
 ### Layer 3 — Memory: what the organization knows
 
 | Component | Function | Status |
 |---|---|---|
-| **Event store** | Durable, replayable, cross-entity event log. | `ABSENT` — `bus.py` is deliberately ephemeral |
+| **Event store** | Durable, replayable, cross-entity event log. | `PARTIAL` — `conductor/engine/audit.py` (append-only, **per pipeline**) plus `events.py` SSE pub/sub. `agent-factory`'s `bus.py` is deliberately ephemeral. |
 | **World-state store** | Materialized organizational state at time T. | `ABSENT` |
 | **Knowledge store** | Typed, provenance-carrying findings and evidence. | `PARTIAL` — `docs/findings.d/` is untyped Markdown, repo-local |
+
+Same correction as Layer 2: `audit.py` is *"pipeline audit trail — append-only evidence log per
+pipeline"*, which is durable and replayable but scoped to one pipeline. Cross-entity organizational
+state remains absent — the per-pipeline log is the right primitive at the wrong granularity.
 
 ### Layer 4 — Human: how a person stays in the loop
 
 | Component | Function | Status |
 |---|---|---|
-| **Escalation channel** | Delivers a `DEGRADED` or a bounded-authority breach to a human, and proves it arrived. | `ABSENT` |
+| **Escalation channel** | Delivers a `DEGRADED` or a bounded-authority breach to a human, and proves it arrived. | `PARTIAL` — conductor *declares* what needs a human (`approvalRequiredFor`, `queuedJobBehavior: notify-only`); delivery is **unverified here** |
 | **Command World** | The live organizational surface. | `ABSENT` |
 | **After-action review** | Turns a closed mission into doctrine and eval cases. | `ABSENT` |
 
@@ -240,10 +254,21 @@ cannot be built before this exists, or it evolves against live systems.
 
 ### The honest tally
 
-Of roughly fourteen components, **none is ecosystem-ready**, five are partial, and the two
-load-bearing ones for safety — the **policy enforcement point** and the **simulation
-substrate** — are entirely absent. Any roadmap that puts the evolution chamber before those
-two is proposing to evolve an organization with no sandbox and no enforceable limits.
+Of roughly fourteen components, **none is ecosystem-ready** and seven are partial. The
+**simulation substrate** is the one load-bearing safety component that is entirely absent, so a
+roadmap putting the evolution chamber first still proposes to evolve an organization with no
+sandbox.
+
+⚠ **This tally was wrong when first published, and the way it was wrong is worth recording.** It
+declared components `ABSENT` *across the estate* after inventorying only two of the three repos
+that hold them. `conductor` was never opened. An absence measured with an instrument that could not
+see the third repository is not an absence — it is `NOT-VISIBLE`, and reporting it as `ABSENT` is
+the precise failure this programme exists to prevent, committed inside the document defining the
+programme's own component inventory.
+
+**Any future component audit must name the repositories it searched**, and treat a component as
+`ABSENT` only when every named repository was actually read. The estate is at least
+`agent-factory`, `conductor`, `prefect-connectors` and this repository.
 
 ---
 
