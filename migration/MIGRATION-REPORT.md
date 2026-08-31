@@ -209,6 +209,18 @@ benchmarks) finding multi-agent **averaging −3.5% against single-agent baselin
 the class that did worst. It also notes every measured failure in this estate was a *seam* failure,
 so adding mandatory LLM-to-LLM handoffs treats the wrong variable.
 
+> ⚠ **Corrected 2026-08-30, by R01.** That −3.5% carries a **95% interval of −18.6% to +25.7%**,
+> which the source answer `agent-factory/docs/research/answers/R2-answer-topology.md:15` states and
+> which the blueprint header — and this report's first version — both dropped. A mean whose
+> interval spans zero is not evidence that multi-agent hurts on average. The same study found a
+> centralised system **improved** a parallelisable task by **+80.9%**, and the answer labels the
+> whole thing *"OPEN RESEARCH, not production infrastructure evidence"*.
+>
+> **The rejection decision survives; the argument for it changes.** It rests on the sequential
+> 39–70% degradation and on our own seam failures — not on the headline mean. Quote the answer
+> file, never the header. This is a live instance of the estate's own rule that a figure without
+> its basis is a claim wearing a measurement's clothes.
+
 The file was **kept, not deleted**: *"a hypothesis that was tested and rejected, and the rejection
 is worth more than the file's absence would be."*
 
@@ -217,10 +229,16 @@ authoritative verifier showing **≥10pp absolute terminal-success gain**, or **
 indistinguishable success**, with no increase in side effects and every mandatory handoff **≥99%
 accepted-and-correctly-consumed**.
 
-**Implication.** This is the strongest existing prior-art result against the naive form of the
-Agent Army thesis, and it is *our own*. R01 (prior art and novelty boundary) and R30 (evaluation)
-should both start from it. R30's experiment design already has the right shape; what it lacks is
-this baseline and this threshold.
+**Implication.** This is the one place we hold real experimental evidence bearing on the Agent Army
+thesis, and it is *our own record of it*. R01 and R30 (evaluation) should both start from it —
+**with its interval attached.** R30's experiment design already has the right shape; what it lacks
+is this baseline and this threshold.
+
+What the correction above actually demonstrates is worth more than the figure: a number travelled
+three hops — answer → blueprint header → bridge document — and **lost its uncertainty at hop two
+and its caveats at hop three**, getting more confident at every step. That is a mechanism, it is
+reproducible, and it is exactly what an organizational-knowledge programme should be able to
+detect. R21 and R43 should treat it as a worked example rather than a hypothetical.
 
 ### 2. The research corpus has no way to say "the instrument was dark"
 
@@ -308,14 +326,16 @@ cd C:/Users/PaulRussell/repos/agent-army-research
 git push -u origin main      # run outside the agent, or from the ! prompt
 ```
 
-The agent-factory side is likewise **committed but unpushed**, on its own branch:
+**The agent-factory side is published.** Branch `docs/agent-army-research-separation` was pushed to
+`personal` on 2026-08-30 (a branch push, which the guard permits). Open the PR with:
 
 ```bash
 cd C:/Users/PaulRussell/repos/agent-factory
-git push -u personal docs/agent-army-research-separation
 gh pr create --base feat/readiness-generator \
   --title "docs: separate Agent Army research from product repository"
 ```
+
+or via https://github.com/russell94paul/agent-factory/pull/new/docs/agent-army-research-separation
 
 ---
 
@@ -323,6 +343,31 @@ gh pr create --base feat/readiness-generator \
 
 **Do not start implementation.** Nothing is approved, and the product-side gate
 (*one certified team*) is closed.
+
+### Update 2026-08-30 — Wave 0 was run
+
+The recommendation below was written before Wave 0 ran. It has since been executed in-repo with
+subagents (`deep-research` skill) rather than through an external tool. Status:
+
+| Pass | State | Output |
+|---|---|---|
+| Vocabulary crawl (input to R02) | complete | `research/sources/agent-factory-vocabulary-crawl.md` |
+| R01 — Prior art and novelty boundary | complete | `research/answers/R01-answer-prior-art-and-novelty-boundary.md` |
+| R00 — Foundations of AOE | running | `research/answers/R00-answer-foundations-of-aoe.md` |
+| R02 — Canonical ontology | not started — depends on R00 + R01 | — |
+
+**How it ran matters for how you weigh it:** these were local subagents — *less independent than an
+outside model, stronger on file-and-line claims.* Citation verification and an adversarial
+refutation pass are still outstanding, and no answer should reach `ontology/`, `architecture/` or
+`governance/` until synthesis.
+
+R01's headline: of the 15 concepts, **7 are at CRITICAL novelty risk** with published prior art
+doing materially the same thing — KB-ORG (2008) is the Organizational Compiler, ODML is Org-IR,
+Organization Self-Design (1992) is Morphogenetic Teams, Co-Fields/TOTA is Stigmergic Fields, and
+PROSA (1998) already uses the words *staff holon*. R01 also corrected the −3.5% figure this report
+had carried without its interval (§Product discoveries #1).
+
+### The original recommendation, kept for the record
 
 Begin the research programme with Wave 0, in this order:
 
@@ -337,9 +382,9 @@ R02 — Canonical Ontology and Vocabulary
       foundations/R02-canonical-ontology-and-vocabulary.md
 ```
 
-Attach to R01 the three product discoveries above — particularly the −3.5% multi-agent result and
-its quantified unlock thresholds. R01 exists to find the strongest evidence against novelty, and
-the strongest such evidence currently available was produced in-house and is not yet in the corpus.
+Attach to R01 the product discoveries above — the multi-agent result **with its interval** and its
+quantified unlock thresholds. R01 exists to find the strongest evidence against novelty, and the
+most relevant such evidence available was produced in-house and was not in the corpus.
 
 Save answers to `research/answers/`, audit with `claude-skills/evidence-auditor`, synthesize to
 `research/synthesis/W0-foundations.md`, and only then update `ontology/`, `architecture/` and
